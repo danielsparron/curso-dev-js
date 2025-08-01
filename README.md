@@ -1,5 +1,5 @@
 # Esse repositorio será utilizado como um bau, para salvar as atividades, aulas do curso do SENAI Javascript 
-# Não sei ao certo como utilizar e descrever como vai ser utilizado esse repositorio, mas vejo que será importante para o futuro do curso
+Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto com o professor, serão adicionandos a esse repositorio do GitHub
 
 # Commits utilizados e existentes: 
  - Organizando as pastas e arquivos
@@ -10,3 +10,19 @@
 # Branchs:
   - main
   - melhorias-estrutura
+
+# Comandos Utilizados para enviar e criar os arquivos (Você também pode ver isso em um arquivo .txt dentro da pasta)
+    - git init 
+    - git config --global user.name
+    - git config --global user.email
+    - git branch
+    - git branch -d 
+    - git switch 
+    - git merge
+    - git add .
+    - git commit -m
+    - git push origin main
+    - git clone   
+    - git remote add origin
+    - git checkout
+
