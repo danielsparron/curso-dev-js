@@ -24,3 +24,25 @@ Informações Relevantes para JavaScript:
         JavaScript possui uma sintaxe inspirada em Java, mas com suas próprias peculiaridades, como tipagem dinâmica e orientação a objetos baseada em protótipos. 
 
 Criador do repositório: Daniel Santos Parron
+
+```txt
+JavaScript é uma linguagem de programação leve, interpretada, orientada a objetos e baseada em protótipos, amplamente utilizada no desenvolvimento web para criar interatividade nas páginas.
+
+🟢 Informações gerais:
+- Criada em 1995 por Brendan Eich.
+- Inicialmente chamada de Mocha, depois LiveScript, e finalmente JavaScript.
+- Padrão oficial: ECMAScript (mantido pela ECMA International).
+- JavaScript é executado principalmente em navegadores, mas também pode ser usado no backend via Node.js.
+
+🛠️ Características principais:
+- Linguagem de tipagem dinâmica.
+- Suporta programação orientada a objetos, funcional e imperativa.
+- É single-threaded, mas usa o modelo de **event loop** para lidar com operações assíncronas.
+- Permite manipulação do DOM (Document Object Model).
+- Compatível com várias bibliotecas e frameworks (React, Vue, Angular, etc.).
+
+🧠 Curiosidades:
+- Quase todo navegador moderno vem com um motor JavaScript embutido (como V8 no Chrome e Node.js).
+- JavaScript é uma das linguagens mais populares do mundo segundo rankings como o Stack Overflow Developer Survey.
+
+✍️ Autor da pesquisa: Daniel Santos Parron
