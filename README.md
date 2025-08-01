@@ -9,7 +9,8 @@ Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto co
  - Atualizando e informando os comandos do git 
  - Adicionando mais detales
  - Pesquisa Atualização
- - Organizando 2 
+ - Organizando 2
+ - Save
 
 # Branchs:
   - main
