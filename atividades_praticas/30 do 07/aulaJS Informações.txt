@@ -1,0 +1,39 @@
+git init - inicia o git remotamente eu acho, sei la 
+
+Configurando o GIT:
+ git config --global user.name "Daniel Parron" -> adicoina seu nome :0 
+ git config --global user.email "danielsaparron@gmail.com" 0> adicionou seu email 
+
+pastas:
+ src
+ docs
+
+arquivo:
+ README.md -> Adiciona uma apresentação e descrição do projeto, adiciona um # para um comentário 
+ app.js 
+
+
+git add . -> adiciona tudo que ta na pasta, ate a subpasta
+git commit -m "Estrutura básica do projeto" -> Salvando em um commit
+
+git status -> Mostra todos os arquivos modificados desde a ultima versão salva
+
+Use um commit para salvar quando for modifica um arquivo com contéudo importante
+
+> git branch - > Mostra o nome das branchs ou a branch principal (se tiver so uma) 
+
+> git branch -m [nome_atual] [nome_que_deseja_agora] -> muda o nome da branch para outra 
+
+ git  switch -c [novo_branch] -> Cria uma nova branch
+
+git switch [nome da branch] -> Muda para uma outra branch
+
+git diff [main] [nova_funcionalidade] -> Consegue ver o que foi modificado de uma branch à outra (Para voltar ao terminal, pressione Q)
+
+git merge [branch aonde tem uma modificação] -> adiciona a modificação de uma branch secundaria a principal, basicamente ela mescla as duas branchs
+
+git branch -d [nome_da_branch] -> Remove a branch que já foi mestrada á principal (Caso queira excluir sem mescla, troque o d para D)
+
+git log -> Mostra todas as modificações ja feitos (commit)
+
+git log --oneline -> Mostra o mesmo do log normal, so que resumido 
