@@ -6,6 +6,10 @@ Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto co
  - Nova atualização
  - Criador NOME
  - README ATUALIZAÇÃO
+ - Atualizando e informando os comandos do git 
+ - Adicionando mais detales
+ - Pesquisa Atualização
+ - Organizando 2 
 
 # Branchs:
   - main
