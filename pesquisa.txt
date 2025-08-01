@@ -20,3 +20,5 @@ Relevância no Mercado Mobile:
 Com o uso de frameworks como React Native e NativeScript, JavaScript também se tornou uma linguagem popular para o desenvolvimento de aplicativos mobile, com suporte para iOS e Android. 
 Sintaxe e Características:
 JavaScript possui uma sintaxe inspirada em Java, mas com suas próprias peculiaridades, como tipagem dinâmica e orientação a objetos baseada em protótipos. 
+
+Daniel Santos Parron
