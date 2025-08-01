@@ -15,19 +15,19 @@ Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto co
     - main
     - melhorias-estrutura
 
-    Comandos Utilizados para enviar e criar os arquivos (Você também pode ver isso em um arquivo .txt dentro da pasta)
-        - git init 
-        - git config --global user.name
-        - git config --global user.email
-        - git branch
-        - git branch -d 
-        - git switch 
-        - git merge
-        - git add .
-        - git commit -m
-        - git push origin main
-        - git clone   
-        - git remote add origin
-        - git checkout
+# Comandos Utilizados para enviar e criar os arquivos (Você também pode ver isso em um arquivo .txt dentro da pasta)
+    - git init 
+    - git config --global user.name
+    - git config --global user.email
+    - git branch
+    - git branch -d 
+    - git switch 
+    - git merge
+    - git add .
+    - git commit -m
+    - git push origin main
+    - git clone   
+    - git remote add origin
+    - git checkout
 
     ✍️ Autor da pesquisa: Daniel Santos Parron
