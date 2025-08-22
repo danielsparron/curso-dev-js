@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action=""  method="post">
+        <!-- Aparece como se fosse o titulo do campo -->
+        <label for="nome_completo">Nome Completo:</label>
+        <br>
+        <input type="text" name="nome_completo" id="nome_completo" placeholder="Insira o seu nome completo">
+        
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" name="email" id="email" placeholder="Insira o seu E-Mail">
+
+        <br><br>
+
+        <label for="senha">Senha:  </label>
+        <br>
+        <input type="password" name="senha" id="senha" placeholder="Insira a sua senha">
+
+        <br><br>
+
+        <label for="mensagem">Mensagem:</label>
+        <br>
+        <textarea name="mensagem" id="mensagem" placeholder="Insira a sua mensagem"></textarea>
+        
+        <br><br>
+
+        <label for="pais">País:</label>
+
+        <select name="pais" id="pais">
+            <option value="br">Brasil</option>
+            <option value="us">Estados Unidos</option>
+            <option value="pt">Portugual</option>
+        </select>
+
+        <br><br>
+
+        <label for="termos">Aceito os termos:</label>
+        <input type="checkbox" name="termos" id="termos">
+        <a href="pdf.pdf" target="_blank" rel="noopener noreferrer"> Ver os termos</a>
+
+        <br><br>
+
+        <button type="submit">Enviar Informações</button>
+    </form>
+</body>
+</html>
