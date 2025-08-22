@@ -31,3 +31,9 @@ Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto co
     - git checkout
 
     ✍️ Autor da pesquisa: Daniel Santos Parron
+
+# Começando a aprender sobre HTML e CSS
+
+Primeira aula faltei :0 
+
+Segunda aula ensinará sobre formularios e suas coletas de dados, e como o navegador faz isso!
