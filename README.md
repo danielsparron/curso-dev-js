@@ -37,3 +37,5 @@ Ou seja, toda as atividades, estruturas, ensinamentos, atividades em conjunto co
 Primeira aula faltei :0 
 
 Segunda aula ensinará sobre formularios e suas coletas de dados, e como o navegador faz isso!
+
+Terceira aula explicará sobre CSS3 
