@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Download</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <style>
+        .alt500 {
+            height: 500px;
+        }
+
+        .alt100 {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo Breakpoints</h1>
+
+    <!-- p.d-none.d-sm-block.bg-primary -->
+    <p class="d-none d-sm-block bg-primary text-white">Vísivel a partir de SM >= 576px</p>
+
+    <!-- p.d-none.d-md-block.bg-sucess  -->
+    <p class="d-none d-md-block bg-success text-white">Vísivel a patir de MD >= 768px</p>
+
+    <!-- p.d-none.d-lg-block.bg-dark -->
+    <p class="d-none d-lg-block bg-dark text-white">Vísivel a partir de LG >= 992px</p>
+
+    <!-- p.d-none.d-xl-block.bg-danger -->
+    <p class="d-none d-xl-block bg-danger text-white">Vísivel a partir de XL >= 1200px</p>
+
+    <!-- p.d-none.d-xxl-block.bg-info -->
+    <p class="d-none d-xxl-block bg-info text-white">Vísivel a partir de XXL >= 1400px</p>
+
+    <h1>Exemplo de Grids</h1>
+
+    <!-- div.container -->
+    <div class="container mt-5">
+        <!-- div.row>div.col.alt100*2 -->
+        <div class="row">
+            <div class="col alt100 bg-success"></div>
+
+            <div class="col alt100 bg-danger"></div>
+
+            <div class="col alt100 bg-warning"></div>
+
+            <div class="col alt100 bg-success"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 alt100 bg-danger"></div>
+
+            <div class="col-12 col-lg-3 alt500 bg-warning"></div>
+
+            <div class="col-12 col-lg-9 alt500 bg-primary"></div>
+            
+            <div class="col-12 alt100 bg-success"></div>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
