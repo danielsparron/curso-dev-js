@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicíos Operadores</title>
+</head>
+<body>
+    <p>Aperte F12 para visualizar os resultados</p>
+
+    <script>
+
+        function exercicio1() {
+            // Input - Prompt
+            const num1 = Number(prompt("Informe um número: "));
+            const num2 = Number(prompt("Informe um outro número: "));
+            console.log(num1 + num2); 
+            console.log(num1 - num2);
+            console.log(num1 * num2);
+            console.log(num1 / num2);   
+        }
+        
+        function exercicio2() {
+            const numero = Number(prompt("Informe um número: "));
+            console.log(numero - 1 + "-".repeat(3) + numero + "-".repeat(3) + (numero + 1));
+        }
+
+        function exercicio6() {
+            const numeroReal = Number(prompt("Informe quanto você tem em reais: "))
+            console.log(`Reais R$${numeroReal.toFixed(2)} em Dolar $${(numeroReal / 5.31).toFixed(2)}`);
+        }
+
+        exercicio6();
+
+        //exercicio6();
+
+        function exercicio7() {
+            const produtoPreco = Number(prompt("Informe o preço de um produto: ")); 
+            const produtoDesconto = 5 / 100
+            const produtoDesconto5 = produtoPreco - (produtoPreco * produtoDesconto);
+            console.log(produtoDesconto5.toFixed(2));
+        }
+
+        exercicio7();
+        //exercicio2();
+
+
+        // function exercicio2() {
+        //     const verdadeiroPi = Math.PI; 
+        //     console.log(verdadeiroPi);
+        // }
+
+        // exercicio2();
+        
+        // exercicio1();
+
+
+    </script>
+</body>
+</html>

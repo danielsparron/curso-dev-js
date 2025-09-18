@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Operadores</title>
+</head>
+<body>
+    <p>Aperte F12 para ver os resultados</p>
+
+    <script>
+
+        // Variáveis
+
+        // VAR
+        var exemplovar = "Daniel"; 
+        exemplovar = "Pinto";
+        var exemplovar = "Ain, Jacã!";
+        console.log(exemplovar)
+    
+        // LET - Não parmite redeclarar no mesmo bloco, mas permite alterar o valor.
+
+        let exemplolet = 25; 
+        exemplolet = 30; 
+        console.log(exemplolet);
+
+        // CONST - Não permite redeclarar no mesmo bloco e alterar o seu valor 
+
+        const exemploconst = 1.50;
+        // exemploconst = 2.20; 
+        //console.log(exemploconst); 
+        // const exemploconst = 0;
+
+    
+
+        // TIPO DE DADOS
+
+        // String - Texto 
+
+        const nome = "Daniel"; 
+        const sobrenome = 'Parron'; 
+        const multiplaslinhas = `NOSSSSSSSSSSSSSSSSSSSSSSSAAAAAAAAA
+        COMENTÁRIO LONGO, E MUITO FODA-SE ESSA TECLA, MEU DEUS
+        POR QUE ESCOLHERAM A CRASE!?`
+        console.log(nome);
+        console.log(nome, sobrenome);
+        console.log(nome + " " + sobrenome);
+        console.log(`${nome} ------ ${sobrenome}`)
+
+        // NUMBERS - NÚMEROS 
+
+        const idade = 15; 
+        const altura = 1.68; 
+        const temperatura = 26; 
+        console.log(idade,altura,temperatura);
+        console.log(`Idade: ${idade} --- Altura: ${altura} --- Temperatura: ${temperatura}`);
+
+        // BOOLEANOS - Bool
+        const ativo = true; 
+        const inativo = false; 
+        const maiorIdade = 18 > idade;
+        console.log(maiorIdade); 
+
+        // NULL E UNDEFINED
+        let valorNulo = null; 
+        let valorUndefined = undefined; 
+        console.log(valorNulo, valorUndefined);
+
+        // OPERADORES ARITMÉTICOS
+
+        const a = 2; 
+        const b = 4;
+
+        // PENDAS
+        console.log(a + b);
+        console.log(a - b);
+        console.log(a * b);
+        console.log(a / b);
+        console.log(a ** b);
+        console.log(a % b);
+
+        // incremento e decremento
+        let contador = 10; 
+        console.log(contador);
+        console.log(++contador);
+        console.log(contador++);
+        console.log(contador);
+
+        console.log(contador);
+        console.log(--contador);
+        console.log(contador--);
+        console.log(contador);
+
+        // OPERADORES DE ATRIBUIÇÃO 
+        console.log("------------------")
+        let num = 10; 
+        
+        console.log(num);
+        num += 5; 
+        console.log(num);
+        
+        num -= 5; 
+        console.log(num);
+
+        num *= 5; 
+        console.log(num);
+
+        num /= 5; 
+        console.log(num);
+
+        num **= 5; 
+        console.log(num);
+
+        num %= 5; 
+        console.log(num);
+
+        // OPERADORES DE COMPARAÇÃO
+
+        const x = 5; 
+        const y = "5"; 
+        const z = 10;
+
+        console.log(x == y);
+        console.log(x === y);
+
+        console.log(x > z);
+        console.log(x <= z);
+
+        // OPERADORES LÓGICOS 
+        // || - OU
+        // & - E 
+        // ! - Not
+        
+        const temIdade = true; 
+        const temCNH = false; 
+        const temDinheiro = false; 
+        const temCarro = true; 
+
+        console.log(temIdade || temCNH || temDinheiro || temCarro);
+
+        console.log(!temIdade);
+
+
+        // CONVERSÕES DE TIPO
+
+        // Implicitas
+
+        console.log("5" + 5);
+        console.log(5 + "5");
+        console.log("5" - 5);
+        console.log(5 - "5"); 
+
+        // Explicitas
+        // String para Number
+        const textoNumero = "42.7";
+        console.log(parseFloat(textoNumero));
+        console.log(parseInt(textoNumero));
+
+        console.log(parseFloat("45teste"));
+        console.log(Number("45teste"));
+
+        // Number para String 
+        const numeroTexto = 123.50; 
+        
+        console.log(String(numeroTexto));
+        console.log(numeroTexto.toString());
+        console.log("" + numeroTexto);
+
+        // Number/String para Bool
+        console.log(Boolean(1));
+        console.log(Boolean(0));
+        console.log(Boolean(""));
+        console.log(Boolean("Texto"));
+
+        console.log("-".repeat(5))
+
+        // VERIFICAÇÃO DE TIPO 
+        const numeroPositivo = 10;
+        const nomeCompleto = "Daniel Parron";
+        console.log((typeof(numeroPositivo)));
+        console.log((typeof(nomeCompleto)));
+</script>
+</body>
+</html>
