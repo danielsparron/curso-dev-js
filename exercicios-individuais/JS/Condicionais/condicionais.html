@@ -48,11 +48,14 @@
             if (valorCompra > 200) {
                 console.log("Frete Grátis");
             }
-            else if (valorCompra >= 100 && valorCompra < 199.99) {
-                console.log("Frete de R$ 15.00 ");
+            else if (valorCompra >= 100) {
+                console.log(valorCompra + 15);
             }
-            else if (valorCompra < 100) {
-                console.log("Frete de R$ 25.00");
+            else if (valorCompra > 0) {
+                console.log(valorCompra + 25);
+            }
+            else {
+                console.log("Valor Inválido!");
             }
         }
         // exercicio4();
@@ -129,7 +132,7 @@
 
 
         //exercicio8();
-        
+
         function exercicio9() {
             const salarioFunc = Number(prompt("Insira o seu salario: "));
             const anosFunc = Number(prompt("Insira quanto anos de serviço você exerce: "));
@@ -149,7 +152,10 @@
         function exercicio10() {
             const idade = Number(prompt("Informe a sua idade: "));
             const peso = Number(prompt("Informe o  seu peso: "));
-            const resf = prompt("Voce está doente - Resfriado? (s/n)").toLowerCase();
+            const resf = prompt("Voce está doente - Resfriado? (s/n)").toLowerCase().trim();
+            // toLowerCase().trim(); 
+            // lower -> deixa tudo minusculo
+            // trim -> remove os espaços 
             
             if (idade >= 18 && idade <= 69) {
                 if (peso > 50) {

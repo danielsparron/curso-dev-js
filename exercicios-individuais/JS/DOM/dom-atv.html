@@ -100,6 +100,15 @@
             const alturaInputN = Number(alturaInput.value);
             const contaIMC = pesoInputN / (alturaInputN ** 2);
 
+            const status = "";
+
+            if (contaIMC < 18.5){
+                status = "Abaixo do Peso";
+            }
+            else if (contaIMC >= 18.5 && contaIMC <= 24.9) {
+                
+            }
+
             resultadoIMC.textContent = `IMC: ${contaIMC.toFixed(2)}`;
 
         });
