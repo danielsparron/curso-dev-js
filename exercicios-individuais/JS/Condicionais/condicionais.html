@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Aperte F12</p>
+    <script>
+        function exercicio3() {
+            const parOuImpar = Number(prompt("Insira um numero inteiro: "));
+            if (parOuImpar % 2 == 0) {
+                console.log(`${parOuImpar} é um número PAR`);
+            }
+            else {
+                console.log(`${parOuImpar} é um número IMPAR`);
+            }
+        }
+
+        // exercicio3();
+
+        function exercicio4() {
+            const valorCompra = Number(prompt("Insira o valor do preço de uma compra: "));
+
+            if (valorCompra > 200) {
+                console.log("Frete Grátis");
+            }
+            else if (valorCompra >= 100 && valorCompra < 199.99) {
+                console.log("Frete de R$ 15.00 ");
+            }
+            else if (valorCompra < 100) {
+                console.log("Frete de R$ 25.00");
+            }
+        }
+        // exercicio4();
+
+        function exercicio9() {
+            const salarioFunc = Number(prompt("Insira o seu salario: "));
+            const anosFunc = Number(prompt("Insira quanto anos de serviço você exerce: "));
+
+            if (anosFunc > 5) {
+                const bonus = salarioFunc + (salarioFunc * 0.05); 
+                console.log("Você recebeu um bonus de 5%, parabens");
+                console.log(bonus);
+            }
+            else {
+                console.log("Não a nenhum bonus, seu salario é o mesmo de sempre!");
+            }
+        }
+
+        //exercicio9();
+
+        function exercicio10() {
+            const idade = Number(prompt("Informe a sua idade: "));
+            const peso = Number(prompt("Informe o  seu peso: "));
+            const resf = prompt("Voce está doente - Resfriado? (s/n)").toLowerCase();
+            
+            if (idade >= 18 && idade <= 69) {
+                if (peso > 50) {
+                    if (resf == "s") {
+                        console.log("Você não atende aos requisitos!");
+                    }
+                    else if (resf == "n") {
+                        console.log("Você pode doar sangue!");
+                    }
+                }else {
+                    console.log("Você não atende aos requisitos!");
+                }
+            }else {
+                console.log("Você não atende aos requisitos!");
+            }
+        }
+
+        exercicio10();
+    </script>
+</body>
+</html>

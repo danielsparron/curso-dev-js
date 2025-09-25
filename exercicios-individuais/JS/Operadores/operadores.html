@@ -35,8 +35,23 @@
         //exercicio3();
 
         function exercicio4() {
-            
+            const nt1 = Number(prompt("Insira o valor da primeira prova: "));
+            const nt2 = Number(prompt("Insira o valor da primeira prova: "));
+            const nt3 = Number(prompt("Insira o valor da primeira prova: "));
+            const media_final = (nt1 + nt2 + nt3) / 3;
+            console.log(`Média final foi de ${media_final.toFixed(2)}`);
         }
+
+        //exercicio4();
+
+        function exercicio5() {
+            const valorMetros = Number(prompt("Informe uma medida em metros: "));
+            const valorCen = valorMetros * 100; 
+            const valorMili = valorMetros * 1000;
+            console.log(`Metros:  ${valorMetros} ${"-".repeat(3)} Centimetros  ${valorCen} ${"-".repeat(3)} Milimetros:  ${valorMili} ${"-".repeat(3)}  `);
+        }
+
+        //exercicio5();
 
         function exercicio6() {
             const numeroReal = Number(prompt("Informe quanto você tem em reais: "))
@@ -67,6 +82,19 @@
         
         // exercicio1();
 
+
+        function exercicio8() {
+            const idade = Number(prompt("Informe sua idade: "));
+            console.log(idade >= 18);
+
+        }
+
+        //exercicio8();
+
+        function exercicio9() {
+            const largura = Number(prompt("Informe a largura de uma parede em metros: "));
+            const altura = Number(prompt("Informe a altura de uma parede em metros: "));
+        }
 
     </script>
 </body>

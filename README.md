@@ -39,3 +39,5 @@ Primeira aula faltei :0
 Segunda aula ensinará sobre formularios e suas coletas de dados, e como o navegador faz isso!
 
 Terceira aula explicará sobre CSS3 
+
+Me perdi, mas a gente ta fazendo a interação direta do Javascript para o HTML (24/09/2025)

@@ -58,6 +58,9 @@
     </div>
 
     <script>
+
+        // CALCULAR CONVERTOR EM DOLAR
+
         const valorEmReal = document.querySelector("#valor-real");
         const btnConverter = document.querySelector("#btn-converter");
         const resultado = document.querySelector("#resultado");
@@ -80,9 +83,9 @@
         btnCalculaDesconto.addEventListener("click",function(){
             const valorPreco = Number(precoProduto.value);
             const valorDesconto = Number(descontoProduto.value);
-            const conta = valorPreco - valorPreco * (valorDesconto / 100);
+            const conta = valorPreco - (valorPreco * (valorDesconto / 100));
 
-            resultadoDesconto.textContent = `Preço do Produto era R$${valorPreco}, com desconto de ${valorDesconto}% ficou R$${conta}`
+            resultadoDesconto.textContent = `R$${conta.toFixed(2)}`;
         });
 
 
@@ -95,9 +98,9 @@
         btnCalculaIMC.addEventListener("click",function(){
             const pesoInputN = Number(pesoInput.value);
             const alturaInputN = Number(alturaInput.value);
-            const contaIMC = pesoInputN / (alturaInputN ** 2)
+            const contaIMC = pesoInputN / (alturaInputN ** 2);
 
-            resultadoIMC.textContent = `IMC: ${contaIMC.toFixed(2)}`
+            resultadoIMC.textContent = `IMC: ${contaIMC.toFixed(2)}`;
 
         });
     </script>
