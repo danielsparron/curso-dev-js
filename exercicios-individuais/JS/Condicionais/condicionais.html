@@ -8,6 +8,28 @@
 <body>
     <p>Aperte F12</p>
     <script>
+
+        function exercicio1() {
+            const idade = Number(prompt("Informe sua idade: "));
+            if (idade >= 18) {
+                console.log("Você é maior de idade!");
+            }
+            else {
+                console.log("Você é menor de idade!");
+            }
+        }
+
+        function exercicio2() {
+            const nota = Number(prompt("Informe a nota de sua avaliação: "));
+
+            if (nota >= 7) {
+                console.log("Aprovado!");
+            }
+            else {
+                console.log("Reprovado!");
+            }
+        }
+
         function exercicio3() {
             const parOuImpar = Number(prompt("Insira um numero inteiro: "));
             if (parOuImpar % 2 == 0) {
@@ -35,6 +57,79 @@
         }
         // exercicio4();
 
+        function exercicio5() {
+            const idade = Number(prompt("Informe à sua idade: "));
+
+            if (idade < 12 && idade >= 60) {
+                console.log("Tem direito ao desconto!");
+            }
+            else {
+                console.log("Não tem direito ao desconto!");  
+            }
+
+        }
+
+        function exercicio6() {
+            const listaIMC = ["Abaixo do Peso", "Peso Normal", "Sobrepeso", "Obesidade"];
+            const peso = Number(prompt("Informe o seu peso: "));
+            const altura = Number(prompt("Informe a sua altura: "));
+            const conta = peso / (altura ** 2);
+
+            if (conta < 18.5) {
+                console.log(`${conta.toFixed(2)}, ${listaIMC[0]}`);
+            }
+
+            else if (18.5 <= conta && conta < 25) { 
+                console.log(`${conta.toFixed(2)}, ${listaIMC[1]}`);
+            }
+
+            else if (25 <= conta && conta < 30) {  
+                console.log(`${conta.toFixed(2)}, ${listaIMC[2]}`);
+            }
+
+            else if (conta >= 30) { 
+                console.log(`${conta.toFixed(2)}, ${listaIMC[3]}`);
+            }
+        }
+
+
+        //exercicio6(); 
+
+        function exercicio7() {
+            const ladoUm = Number(prompt("Informe o comprimento do primeiro lado de um triângulo: "));
+            const ladoDois = Number(prompt("Informe o comprimento do segundo lado de um triângulo: "));
+            const ladoTres = Number(prompt("Informe o comprimento do terceiro lado de um triângulo: "));
+            
+            // Verifica se os lados são diferentes (Escaleno)
+            if (ladoUm !== ladoDois && ladoDois !== ladoTres && ladoTres !== ladoUm) {
+                console.log("É um Escaleno");
+            }
+            // Verifica se os lados são iguais (Equilátero)
+            else if (ladoUm === ladoDois && ladoDois === ladoTres) {
+                console.log("É um Equilátero!");
+            }
+            else {
+                console.log("É um Triângulo Isósceles!");
+            }
+        }
+
+
+        //exercicio7();
+
+        function exercicio8() {
+            const unicaLetra = prompt("Insira uma única letra: ").toLowerCase();
+
+            if (unicaLetra === "a" || unicaLetra === "e" || unicaLetra === "i" || unicaLetra === "o" || unicaLetra === "u") {
+                console.log("É uma Vogal");
+            }
+            else {
+                console.log("Não é uma vogal!");
+            }
+        }
+
+
+        //exercicio8();
+        
         function exercicio9() {
             const salarioFunc = Number(prompt("Insira o seu salario: "));
             const anosFunc = Number(prompt("Insira quanto anos de serviço você exerce: "));
@@ -72,7 +167,7 @@
             }
         }
 
-        exercicio10();
+        //exercicio10();
     </script>
 </body>
 </html>
