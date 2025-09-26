@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de arrays e objetos</title>
+</head>
+<body>
+    <p> Aperte F12 para ver o resultado.</p>
+    <script>
+        // ARRAYS E OBJETOS
+
+        // ARRAYS 
+        const frutas = ["Maça","Banana","Uva","Laranja","Pera"];
+        console.log(frutas);
+
+        // Tamanho do Array
+        console.log(frutas.length);
+
+        // Acesso as informações
+        console.log(frutas[0]);
+        console.log(frutas[4]);
+
+        // Maneira dinamica de mostrar o ultimo item da lista (não importa quantas frutas estiver na lista, sempre mostrará o ultimo!)
+        console.log(frutas[frutas.length - 1]);
+
+        // Adicionando itens à Array
+        frutas.push("Abacaxi");
+        console.log(frutas);
+
+        // Adiciona uma fruta na primeira posição da Array
+        frutas.unshift("Pêssego");
+        console.log(frutas);
+
+        // Alterando Itens
+        frutas[4] = "Jabuticaba"
+        console.log(frutas);
+
+        // Exclusão de um item do Array
+        frutas.pop();
+        console.log(frutas);
+
+        // Excluir o primeiro item
+        frutas.shift();
+        console.log(frutas);
+
+        // Substituindo um elemento por outro elemento, e adicionar mais elementos também
+        frutas.splice(1,1,"Limão","Kiwi");
+        console.log(frutas);
+
+        delete frutas[1];
+        console.log(frutas);
+
+        // Exibição
+        console.log(frutas.slice(2));
+
+        console.log(frutas.slice(2,5));
+
+        // OBJETOS
+
+        const pessoa = {
+            nome : "Daniel",
+            idade : 15,
+            altura: "1.68",
+            amigos: ['Pedro','João']
+        }
+
+        console.log(pessoa);
+        // Da para acessar das duas formas abaixo
+        console.log(pessoa["nome"]);
+        console.log(pessoa.nome);
+
+        // Acessando uma array dentro de um objeto
+        // Também tem essas duas formas
+        console.log(pessoa['amigos'][0]);
+        console.log(pessoa.amigos[0]);
+
+        // Inserir novas informações ao Objeto
+        // Se existe ele altera, e se não existe, ele adiciona um novo elemento.
+        pessoa.cidade = "Presidente Prudente";
+        console.log(pessoa);
+
+        pessoa.cidade = "Regente";
+        console.log(pessoa);
+
+        // Excluir
+        delete pessoa.cidade;
+        console.log(pessoa);
+
+    </script>
+</body>
+</html>

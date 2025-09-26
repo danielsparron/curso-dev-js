@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Arrays e Objetos</title>
+</head>
+<body>
+    <p>Aperte F12 para ver o resultado!</p>
+    <script>
+        // Exercicio 01 - Array
+        const playlist = ["Receptáculo Vazio", "Fragmentos da Alma", "Hollow Knight Tema"];
+        console.log(playlist[0]);
+        playlist.push("Préludio ao Caos");
+        playlist.pop();
+        console.log(playlist.length);
+
+        // Exercicio 02 - Objetos
+        const filme = {
+            titulo: "Interestelar",
+            ano: "2014",
+            diretor: "Christopher Nolan"
+        }
+        console.log(`O filme ${filme.titulo}, dirigido por ${filme.diretor} foi lançado em ${filme.ano}`)
+
+        filme.personagens = ["Matt Damon", "Anne Hathaway", "David Gyasi"]; 
+        console.log(filme.personagens[0]);
+
+        console.log(filme);
+    </script>
+</body>
+</html>
