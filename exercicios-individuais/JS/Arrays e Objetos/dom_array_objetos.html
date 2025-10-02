@@ -72,9 +72,11 @@
             const curso = ipCurso.value.trim();
 
             if (nome && idade && curso) {
-                alunos.push([nome,idade,curso]);
+                alunos.push({nome,idade,curso});
                 alert("Aluno cadastrado com sucesso!");     
                 cancelarCadastro();
+                idAtual = alunos.length - 1;    
+                exibirAluno();
             }
             else {
                 alert("Preencha todo os campos!");
@@ -93,9 +95,7 @@
         let idAtual = 0;
 
         const nome = document.querySelector("#aluno-nome");
-
         const idade = document.querySelector("#aluno-idade");
-
         const curso = document.querySelector("#aluno-curso");
 
         function exibirAluno() {
@@ -103,9 +103,36 @@
                 nome.textContent = alunos[idAtual].nome;
                 idade.textContent = alunos[idAtual].idade;
                 curso.textContent = alunos[idAtual].curso;
+                document.querySelector(".ficha-alunos").classList.remove('d-none');
+            }
+            else 
+            {
+                document.querySelector(".ficha-alunos").classList.add('d-none');
             }
         }
+        
+        function proximo() {
+            idAtual++;
+            if (idAtual >= alunos.length) {
+                idAtual = 0;
+            }
+            exibirAluno();
+        }
+
+        function anterior() {
+            idAtual++;
+            if (idAtual < 0) {
+                idAtual = alunos.length - 1; 
+            }
+            exibirAluno();
+        }
     
+        const btnProximo = document.querySelector("#btn-proximo");
+        const btnAnterior = document.querySelector("#btn-anterior");
+
+        btnProximo.addEventListener("click", proximo);
+        btnAnterior.addEventListener("click", anterior);
+
     </script>
 </body>
 
