@@ -66,33 +66,21 @@
         
         buscarDados();
 
+
+        // Function Arrows -> Um tipo mais direto de função
         // Exercicio01
 
-        const calcularArea = (largura,altura) => {
-            return largura * altura; 
-        }
-
+        calcularArea = (largura,altura) => largura * altura;
         console.log(calcularArea(5,2));
 
         // Exercicio02
-        function ehPar(number) {
-            if (number % 2 == 0) {
-                return true;
-            }
-            else {
-                return false;
-            }
-
-        }
-
+        ehPar = (number) => number % 2 === 0;
         console.log(ehPar(2));
 
         // Exercicio03 
-        function celsiusParaFahrenheit(temperaturaCelsius){
-           return `${(temperaturaCelsius * 9/5) + 32}F*`;
-        } 
+        celsiusParaFahrenheit = (temperaturaCelsius) => `${((temperaturaCelsius * 9/5) + 32).toFixed()}F*`;
+        console.log(celsiusParaFahrenheit(32));
 
-        console.log(celsiusParaFahrenheit(15));
     </script>
 </body>
 </html>
