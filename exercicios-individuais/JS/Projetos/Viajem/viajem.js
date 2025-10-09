@@ -13,7 +13,7 @@ function calcularCustoPorPessoa(custoTotal, numViajantes) {
     return custoTotal / numViajantes;
 }
 
-// Função orquestradora para atualizar os resultados
+// Função principal para atualizar os resultados
 function atualizarResultados() {
     const distancia = parseFloat(document.getElementById('distancia').value);
     const consumo = parseFloat(document.getElementById('consumo').value);
