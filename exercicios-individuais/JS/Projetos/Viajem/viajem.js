@@ -1,4 +1,6 @@
 
+document.querySelector(".seu-nome").textContent = "NickDev_";
+
 function calcularLitrosNecessarios(distancia, consumo) {
     return distancia / consumo;
 }
@@ -23,16 +25,16 @@ function atualizarResultados() {
         const custoPessoa = calcularCustoPorPessoa(custoTotal, numViajantes);
 
         // Atualizando os resultados na tela
-        document.getElementById('resultadoCustoTotal').textContent = `Custo Total com Combustível: R$ ${custoTotal.toFixed(2)}`;
-        document.getElementById('resultadoCustoPessoa').textContent = `Custo por Pessoa: R$ ${custoPessoa.toFixed(2)}`;
+        document.querySelector('#resultadoCustoTotal').textContent = `Custo Total com Combustível: R$ ${custoTotal.toFixed(2)}`;
+        document.querySelector('#resultadoCustoPessoa').textContent = `Custo por Pessoa: R$ ${custoPessoa.toFixed(2)}`;
     } else {
         // Exibindo resultados padrão quando os campos não estão preenchidos corretamente
-        document.getElementById('resultadoCustoTotal').textContent = 'Custo Total com Combustível: R$ 0,00';
-        document.getElementById('resultadoCustoPessoa').textContent = 'Custo por Pessoa: R$ 0,00';
+        document.querySelector('#resultadoCustoTotal').textContent = 'Custo Total com Combustível: R$ 0,00';
+        document.querySelector('#resultadoCustoPessoa').textContent = 'Custo por Pessoa: R$ 0,00';
     }
 }
 
-document.getElementById('distancia').addEventListener('input', atualizarResultados);
-document.getElementById('consumo').addEventListener('input', atualizarResultados);
-document.getElementById('precoCombustivel').addEventListener('input', atualizarResultados);
-document.getElementById('numViajantes').addEventListener('input', atualizarResultados);
+document.querySelector('#distancia').addEventListener('input', atualizarResultados);
+document.querySelector('#consumo').addEventListener('input', atualizarResultados);
+document.querySelector('#precoCombustivel').addEventListener('input', atualizarResultados);
+document.querySelector('#numViajantes').addEventListener('input', atualizarResultados);
