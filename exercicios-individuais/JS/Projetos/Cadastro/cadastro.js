@@ -1,5 +1,5 @@
 
-const usuarios = JSON.parse(localStorage.getItem("cadastro_usuarios")) || [];
+let usuarios = JSON.parse(localStorage.getItem("cadastro_usuarios")) || [];
 
 // Elementos
 
@@ -25,6 +25,13 @@ const inputObs = document.querySelector("#user-obs");
 
 const form = document.querySelector("#user-form");
 const tabelaCorpo = document.querySelector("#user-table-body");
+let idEmEdicao = null;
+
+const formTitulo = document.querySelector("#form-titulo"); 
+const btnBuscarCep = document.querySelector("#btn-buscar-cep");
+
+const inputBusca = document.querySelector("#user-busca");
+
 
 // Funções
 
@@ -34,10 +41,13 @@ function mostrarTelaLista() {
     renderizarTabela();
 }
 
-function mostrarTelaCadastro() {
+function mostrarTelaCadastro(editar = false) {
     telaLista.classList.add("d-none");
     telaCadastro.classList.remove("d-none");
+    console.log(editar);
+    formTitulo.textContent = editar === true ? "Editar Usuário" : "Adicionar Novo Usuário";
 }
+
 
 function salvarUsuario() {
 
@@ -59,20 +69,56 @@ function salvarUsuario() {
         nome,sobrenome,email,cep,rua,numero,complemento,bairro,cidade,estado,obs
     }
 
-    usuarios.push(usuario);
+    if (idEmEdicao) {
+        const index = usuarios.findIndex(user => user.id === idEmEdicao);
+        if (index !== -1) {
+            usuarios[index] = usuario;
+        }
+    }
+    else {
+        usuarios.push(usuario);
+    }
+
     salvarNoStorage();
+    mostrarTelaLista();
+    idEmEdicao = null;
+    form.reset();
 }
 
 function salvarNoStorage() {
     localStorage.setItem("cadastro_usuarios", JSON.stringify(usuarios));
 }
 
-function editarUsuario() {
+function editarUsuario(id) {
+    const user = usuarios.find(user => user.id === id);
+    if (!user) return;
 
+    idEmEdicao = id;
+
+    console.log(user);
+
+    inputId.value = user.id;
+    inputNome.value = user.nome;
+    inputSobrenome.value = user.sobrenome;
+    inputEmail.value = user.email;
+    inputCep.value = user.cep; 
+    inputRua.value = user.rua;
+    inputNumero.value = user.numero;
+    inputComplemento.value = user.complemento;
+    inputBairro.value = user.bairro;
+    inputCidade.value = user.cidade;
+    inputEstado.value = user.estado;
+    inputObs.value = user.obs;
+
+    mostrarTelaCadastro(true);
 }
 
-function excluirUsuario() {
-
+function excluirUsuario(id) {
+    if (confirm("Você tem certeza que deseja excluir esse usuário?")) {
+       usuarios = usuarios.filter(user => user.id !== id);
+       salvarNoStorage();
+       renderizarTabela();
+    }
 }
 
 function renderizarTabela(){
@@ -92,11 +138,77 @@ function renderizarTabela(){
     });
 }
 
+async function buscarCEP() {
+    const cep = inputCep.value.replace(/\D/g, '');
+
+    if (cep.length === 8) {
+        try {
+            const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/` );
+            const dados = await resposta.json();
+
+            if (dados.erro) {
+              
+                alert("CEP não encontrado! Verifique o número e tente novamente.");
+            } else {
+              
+                inputRua.value = dados.logradouro;
+                inputBairro.value = dados.bairro;
+                inputCidade.value = dados.localidade;
+                inputEstado.value = dados.estado; 
+            }
+        } catch (error) {
+            alert("Erro ao buscar o CEP. Verifique sua conexão e tente novamente!");
+            console.log(error);
+        }
+    } else {
+        alert("CEP inválido! Por favor, digite um CEP com 8 dígitos.");
+    }
+}
+
+function buscarUsuario() {
+    //LowerCase -> Deixa tudo em minusculo
+    //trim -> remove os espaços das extremidades;
+    const textoBusca = inputBusca.value.toLowerCase().trim();
+
+    if (textoBusca.length > 0) {
+        renderizarTabela();
+        return;
+    }
+
+    const usuarioFiltrados = usuarios.filter(user =>  {
+        return user.nome.includes()(textoBusca) || user.sobrenome.includes(textoBusca) || user.email.includes(textoBusca);
+    });
+
+    renderizarTabela(); 
+
+}
+
 function inicializacao() {
     btnAdicionar.addEventListener("click", mostrarTelaCadastro);
     btnVoltar.addEventListener("click", mostrarTelaLista);
-    
+    btnBuscarCep.addEventListener("click", buscarCEP)
+
     form.addEventListener("submit", salvarUsuario);
+
+    inputBusca.addEventListener("input", buscarUsuario);
+
+    tabelaCorpo.addEventListener("click", (event) =>  {
+        const target = event.target.closest("button");
+        if (!target) return;
+
+        const id = Number(target.dataset.id);
+
+        if (isNaN(id)) return; // Se o id é numerico 
+
+        
+        if (target.classList.contains("btn-danger")){
+            excluirUsuario(id);
+        }
+        else if (target.classList.contains("btn-warning")) {
+            editarUsuario(id);
+        }
+
+    });
 
     mostrarTelaLista();
 }
