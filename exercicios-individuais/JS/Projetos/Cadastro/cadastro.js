@@ -32,6 +32,10 @@ const btnBuscarCep = document.querySelector("#btn-buscar-cep");
 
 const inputBusca = document.querySelector("#user-busca");
 
+const btnDownloadJson = document.querySelector("#btn-download-json");
+const btnUploadJson = document.querySelector("#btn-upload-json");
+const uploadJsonInput = document.querySelector("#upload-json-input");
+
 
 // Funções
 
@@ -121,9 +125,11 @@ function excluirUsuario(id) {
     }
 }
 
-function renderizarTabela(){
+
+
+function renderizarTabela(usuariosParaRenderizar=usuarios) {
     tabelaCorpo.innerHTML = "";
-    usuarios.forEach(user => {
+    usuariosParaRenderizar.forEach(user => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${user.nome}</td>
@@ -168,19 +174,60 @@ async function buscarCEP() {
 function buscarUsuario() {
     //LowerCase -> Deixa tudo em minusculo
     //trim -> remove os espaços das extremidades;
+    
     const textoBusca = inputBusca.value.toLowerCase().trim();
 
-    if (textoBusca.length > 0) {
+    if (textoBusca.length === 0) {
         renderizarTabela();
         return;
     }
 
+    
+
     const usuarioFiltrados = usuarios.filter(user =>  {
-        return user.nome.includes()(textoBusca) || user.sobrenome.includes(textoBusca) || user.email.includes(textoBusca);
+        return user.nome.toLowerCase().trim().includes(textoBusca) || user.sobrenome.toLowerCase().trim().includes(textoBusca) || user.email.toLowerCase().trim().includes(textoBusca);
     });
 
-    renderizarTabela(); 
+    renderizarTabela(usuarioFiltrados); 
 
+}
+
+function baixarJson() {
+    const dados = JSON.stringify(usuarios);
+    const blob = new Blob([dados], {type : "application/json"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "usuarios.json";
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+function uploadJson(event) {
+    const arquivo = event.target.files[0];
+
+    if (!arquivo) return; 
+
+    const leitor = new FileReader();
+
+    leitor.onload = function(e) {
+        const conteudoArquivo = e.target.result;
+
+        const usuariosImportados = JSON.parse(conteudoArquivo);
+
+        if (!Array.isArray(usuariosImportados)) {
+            alert("O arquivo não possui um array válido!");
+        }
+
+        if (confirm("Deseja substituir todos os dados de usuarios pelo do arquivo?")) {
+            usuarios = usuariosImportados;
+            salvarNoStorage();
+            renderizarTabela();
+            alert("Usuários importados com sucesso!");
+        }
+    }
+
+    leitor.readAsText(arquivo);
 }
 
 function inicializacao() {
@@ -194,24 +241,29 @@ function inicializacao() {
 
     tabelaCorpo.addEventListener("click", (event) =>  {
         const target = event.target.closest("button");
+
         if (!target) return;
 
-        const id = Number(target.dataset.id);
+            const id = Number(target.dataset.id);
 
-        if (isNaN(id)) return; // Se o id é numerico 
+            if (isNaN(id)) return; // Se o id é numerico 
 
-        
-        if (target.classList.contains("btn-danger")){
-            excluirUsuario(id);
-        }
-        else if (target.classList.contains("btn-warning")) {
-            editarUsuario(id);
-        }
+            
+            if (target.classList.contains("btn-danger")){
+                excluirUsuario(id);
+            }
+            else if (target.classList.contains("btn-warning")) {
+                editarUsuario(id);
+            }
 
     });
+    
+    btnDownloadJson.addEventListener("click", baixarJson);
+    btnUploadJson.addEventListener("click", () => uploadJsonInput.click());
+
+    uploadJsonInput.addEventListener("change", uploadJson);
 
     mostrarTelaLista();
 }
-
 
 inicializacao();

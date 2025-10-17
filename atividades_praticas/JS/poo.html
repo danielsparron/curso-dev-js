@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // Codigos Soltos
+        const conta1 = {titular: "Lucas", saldo: 500}
+        const conta2 = {titular: "Maria", saldo: 5000}
+
+        function exibirSaldo(conta) {
+            console.log(`Saldo da conta é RS${conta.saldo}`);
+        }
+
+        exibirSaldo(conta1);
+        exibirSaldo(conta2);
+
+///---------------------------------------------------------------------\\\
+        
+        // Metodo Classes
+        class ContaBancaria {
+            constructor(titular, saldoInicial) {
+                this.titular = titular;
+                this.saldoInicial = saldoInicial; 
+            }
+
+            exibirSaldo() {
+                console.log(`Saldo da conta é RS${this.saldoInicial}`);
+            }
+        }
+
+        const contaDaniel = new ContaBancaria("Daniel", 500);
+        const contaMaria = new ContaBancaria("Maria", 5000);
+        contaDaniel.exibirSaldo();
+        contaMaria.exibirSaldo();
+
+    </script>
+</body>
+</html>
