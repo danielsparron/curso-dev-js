@@ -39,6 +39,53 @@
         contaDaniel.exibirSaldo();
         contaMaria.exibirSaldo();
 
+        // Classe de Produto 
+
+        class Produto {
+            constructor(nome, preco, estoque) {
+                this.nome = nome;
+                this.preco = preco; 
+                this.estoque = estoque; 
+            }
+
+            descrever(){
+            console.log(`Produto: ${this.nome}, seu valor é ${this.preco} e o estoque atual é ${this.estoque} unidades`);
+            }
+
+            vender(quantidade) {
+                if (quantidade > this.estoque) {
+                    console.log(`Estoque Insuficiente para a venda. Temos apenas ${this.estoque} unidades do produto "${this.nome}"`);
+                    return
+                }
+                this.estoque -= quantidade; 
+                console.log(`${quantidade} unidades do produto ${this.nome} vendidas com sucesso.`);
+            }
+
+           repor(quantidade) {
+                this.estoque += quantidade;
+                console.log(`Estoque renovado! ${quantidade} unidades do produto ${this.nome} adicionados ao estoque.`);
+           }
+        }
+
+
+
+        const caneca = new Produto("Caneca SENAI", 12.50, 15);
+        const camiseta = new Produto("Camiseta SENAI", 54.50, 10); 
+        caneca.descrever();
+        camiseta.descrever();
+
+        // Manipular os produtos 
+        console.log("Vendas e Reposições");
+        caneca.vender(2);
+        camiseta.vender(3);
+        caneca.vender(20);
+        caneca.repor(50);
+        caneca.vender(20);  
+
+        console.log("Resultado Final: "); 
+        caneca.descrever();
+        camiseta.descrever();
+
     </script>
 </body>
 </html>
